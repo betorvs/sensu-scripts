@@ -1,0 +1,11 @@
+{
+  "handlers": {
+    "remediator": {
+      "type": "pipe",
+      "severities": [
+        "critical"
+      ],
+      "command": "/etc/sensu/handlers/sensu.rb"
+    }
+  }
+}
