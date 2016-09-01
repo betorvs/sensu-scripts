@@ -1,0 +1,9 @@
+{
+  "postjson": {
+    "webhook_url": "https://itsm.home/api/v1/incidents.json",
+    "channel": "incident",
+    "message_prefix": "sensu alerts",
+    "proxy_addr": "",
+    "proxy_port": ""
+  }
+}
