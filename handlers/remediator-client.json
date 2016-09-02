@@ -1,0 +1,11 @@
+
+  "client": {
+    "address": "10.0.2.15",
+    "subscriptions": [
+      "qa-centos-72",
+      "all",
+      "nginx"
+    ],
+    "name": "qa-centos-72"
+  }
+}
