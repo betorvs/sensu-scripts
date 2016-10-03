@@ -1,0 +1,39 @@
+{
+  "checks": {
+    "nginx_http_port": {
+      "command": "check-http.rb -u http://localhost:80",
+      "subscribers": [
+        "nginx"
+      ],
+      "handlers": [
+        "remediator",
+        "alerta"
+      ],
+      "interval": 60,
+      "playbook": "https://nginx.org/en/docs/",
+      "occurrences": "2",
+      "dependencies": "nginx_process",
+      "remediation": {
+        "remediate-nginx-light": {
+          "occurrences": [
+            1,
+            3
+          ],
+          "severities": [
+            2
+          ]
+        },
+        "remediate-nginx-heavy": {
+          "occurrences": [
+            4,
+            5
+          ],
+          "severities": [
+            2
+          ]
+        }
+      },
+      "trigger_on": "nginx"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "remediate-nginx-light": {
+      "command": "sudo /bin/systemctl start nginx.service",
+      "subscribers": [
+        "nginx"
+      ],
+      "handle": false,
+      "publish": false,
+      "interval": 60
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "remediate-nginx-heavy": {
+      "command": "sudo /bin/systemctl restart nginx.service",
+      "subscribers": [
+        "nginx"
+      ],
+      "handle": false,
+      "publish": false,
+      "interval": 60
+    }
+  }
+}
