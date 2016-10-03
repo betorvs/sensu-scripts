@@ -1,6 +1,13 @@
 
 # scripts diversos
 
+## postjson
+
+* postjson.json
+* postjson.rb
+
+Baseado no handler do slack para enviar um json para uma url pre definida.
+
 
 
 ## Remediator
@@ -12,4 +19,13 @@
 * remediate-nginx-light.json
 * remediate-nginx-heavy.json
 
-Sao exemplos aplicados na versao 0.26 do sensu.
+Sao exemplos aplicados na versao 0.26 do sensu. Usado para a criacao de uma vacina para um check pre determinado.
+
+
+## dependencies-filter
+
+Exemplo de filtro de dependencias para inserir nos handlers, retirado de um exemplo de plugin para o flapjack.
+https://gist.github.com/hanynowsky/9c700af0913d96ee4c99
+
+
+
