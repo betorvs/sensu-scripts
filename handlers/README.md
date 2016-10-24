@@ -28,4 +28,8 @@ Exemplo de filtro de dependencias para inserir nos handlers, retirado de um exem
 https://gist.github.com/hanynowsky/9c700af0913d96ee4c99
 
 
+## Alerta.io
 
+Veja este fork: https://github.com/betorvs/sensu-alerta
+
+Adicionei o envio do playbook para o alerta.io com as tags html para ao clicar abrir a documentacao.
