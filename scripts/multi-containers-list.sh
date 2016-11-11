@@ -39,8 +39,8 @@ for container in ${LIST_WITH_COMMA}
     container_solo=`echo $LIST_CONTAINERS | grep ^${container}`
     if [ "$4" == "metric" ]; then
       # Use this line to troubleshooting
-      #echo $PWD/$COMMAND "$OPTIONS" $container_solo --schema $( hostname ).$container_solo
-      $PWD/$COMMAND $OPTIONS $container_solo --schema $( hostname ).$container_solo
+      #echo $PWD/$COMMAND "$OPTIONS" $container_solo --scheme $( hostname ).$container
+      $PWD/$COMMAND $OPTIONS $container_solo --scheme $( hostname ).$container
     else
       # Use this line to troubleshooting
       #echo $PWD/$COMMAND "$OPTIONS" $container_solo $EXTRAS
