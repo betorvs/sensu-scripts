@@ -17,7 +17,7 @@ if [ -z "$TIME" ]; then
   TIME="60"
 fi
 
-echo $CURL -s -i -X POST \
+$CURL -s -i -X POST \
 -H 'Content-Type: application/json' \
 -d "{\"subscription\": \"${SUBS}\", \"check\": \"${CHECK}\", \"creator\":\"${USER}\", \"reason\": \"${REASON}\", \"expire\": ${TIME} }" \
 http://${HOST}:4567/silenced
