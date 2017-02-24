@@ -1,0 +1,10 @@
+{
+  "servicenow": {
+    "service_now_url": "https://instance.service-now.com/api/now/table/incident",
+    "message_prefix": "SENSU",
+    "app_username": "",
+    "app_password": "",
+    "proxy_addr": "",
+    "proxy_port": ""
+  }
+}
