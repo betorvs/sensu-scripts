@@ -2,7 +2,7 @@
 
 #
 # versao 1.0
-# Roberto Scudeller: beto.rvs at gmail dot com
+# roberto.scudeller at walmart.com
 #
 
 require 'sensu-handler'
@@ -64,10 +64,14 @@ class Servicenow < Sensu::Handler
         puts "Problem #{incident_key} [ #{inc_number} ]"
       when 'resolve'
         inc = query_data(event_id,'sys_id')
-        inc_number = query_data(event_id,'number')
-        #puts "Debug: #{event_id} #{inc_number} #{inc} "
-        close_data(inc)
-        puts "Resolved #{incident_key} [ #{inc_number} ]"
+        if inc != "not_found"
+          inc_number = query_data(event_id,'number')
+          #puts "Debug: #{event_id} #{inc_number} #{inc} "
+          close_data(inc)
+          puts "Resolved #{incident_key} [ #{inc_number} ]"
+        else
+          puts "Resolved #{incident_key} [ INC Not Found ] "
+        end
     end
 
   end
@@ -112,9 +116,12 @@ class Servicenow < Sensu::Handler
     response = http.request(req)
     verify_response(response)
     incident = JSON.parse(response.body)
-    id_incident = incident["result"].find {|q1| q1['user_input']=="#{notice}"}["#{question}"]
-    id_incident
-    
+    if incident["result"].empty?
+      puts "not_found"
+    else
+      id_incident = incident["result"].find {|q1| q1['user_input']=="#{notice}"}["#{question}"]
+      id_incident
+    end
   end
 
   def close_data(notice)
