@@ -64,6 +64,7 @@ class Servicenow < Sensu::Handler
         puts "Problem #{incident_key} [ #{inc_number} ]"
       when 'resolve'
         inc = query_data(event_id,'sys_id')
+        #puts "Debug: #{inc} "
         if inc != "not_found"
           inc_number = query_data(event_id,'number')
           #puts "Debug: #{event_id} #{inc_number} #{inc} "
@@ -114,10 +115,12 @@ class Servicenow < Sensu::Handler
     req = Net::HTTP::Get.new(uri)
     req.basic_auth app_username, app_password
     response = http.request(req)
-    verify_response(response)
+    # remove verify because if INC is closed, SN will return 400 bad request
+    #verify_response(response)
     incident = JSON.parse(response.body)
     if incident["result"].empty?
-      puts "not_found"
+      id_incident = "not_found"
+      id_incident
     else
       id_incident = incident["result"].find {|q1| q1['user_input']=="#{notice}"}["#{question}"]
       id_incident
