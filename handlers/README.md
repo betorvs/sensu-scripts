@@ -12,7 +12,7 @@ Baseado no handler do slack para enviar um json para uma url pre definida.
 
 ## Remediator
 
-* sensu.rb
+* handler-sensu.rb (sensu.rb is out of date)
 * remediator-handler-config.json
 * remediator-client.json
 * nginx_http_port.json
