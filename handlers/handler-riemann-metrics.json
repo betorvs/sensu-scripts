@@ -1,0 +1,6 @@
+{
+  "riemann" : {
+     "riemann_host" : "<%= node['riemann_host'] %>",
+     "riemann_port" : 5555
+   }
+}
